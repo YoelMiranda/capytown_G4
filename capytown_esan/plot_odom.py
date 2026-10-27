@@ -105,6 +105,14 @@ def anexar_resumen(path, filas):
     carpeta = os.path.dirname(os.path.abspath(path))
     os.makedirs(carpeta, exist_ok=True)
     es_nuevo = not os.path.exists(path) or os.path.getsize(path) == 0
+    if not es_nuevo:
+        with open(path, newline='') as f:
+            encabezado = next(csv.reader(f), [])
+        if encabezado != CAMPOS_RESUMEN:
+            print(f'[ERROR] {path} tiene otras columnas ({",".join(encabezado)}); no se anexa.')
+            print('        Usa un CSV aparte, p. ej. --resumen plots/resumen.csv, y copia los')
+            print('        valores a linea_recta.csv / validacion.csv.')
+            return
     with open(path, 'a', newline='') as f:
         w = csv.writer(f)
         if es_nuevo:
