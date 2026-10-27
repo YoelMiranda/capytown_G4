@@ -1,1 +1,8 @@
 docs/
+
+# residuos de Python y de colcon (los bags/ SI se versionan: son entregable)
+__pycache__/
+*.pyc
+build/
+install/
+log/

@@ -15,12 +15,14 @@ setup(
         # launch y config
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
         (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+        # secuencia de pruebas RC-0 (ros2 run capytown_esan rc0_pruebas.sh)
+        (os.path.join('lib', package_name), glob('scripts/*.sh')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Catedra CapyTown',
     maintainer_email='profesor@esan.edu.pe',
-    description='RC-1 La Manzana del Tambo: cinematica, odometria y calibracion de b_eff.',
+    description='RC-0 Primer arranque y calibracion: odometria corregible, calibracion de r y b_eff.',
     license='MIT',
     tests_require=['pytest'],
     entry_points={
@@ -31,6 +33,7 @@ setup(
             'error_odom = capytown_esan.error_odom:main',
             'fake_robot = capytown_esan.fake_robot:main',
             'run_square = capytown_esan.run_square:main',
+            'plot_odom = capytown_esan.plot_odom:main',
         ],
     },
 )

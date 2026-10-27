@@ -4,8 +4,8 @@
   <name>capytown_esan</name>
   <version>1.1.0</version>
   <description>
-    Paquete base del proyecto CapyTown (Robótica ESAN). RC-1 "La Manzana del Tambo":
-    cinemática del Yahboom MicroROS-Pi5, odometría y calibración del track efectivo b_eff.
+    Paquete base del proyecto CapyTown (Robótica ESAN). RC-0 "Primer arranque y calibración":
+    arranque del Yahboom MicroROS-Pi5, odometría corregible y calibración de r y b_eff.
   </description>
   <maintainer email="profesor@esan.edu.pe">Catedra CapyTown</maintainer>
   <license>MIT</license>
@@ -17,9 +17,16 @@
   <depend>tf2_ros</depend>
   <depend>sensor_msgs</depend>
 
+  <!-- Launch files y servicio de parametros (calibrate_beff) -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
+
   <!-- Para error_odom.py (lectura de rosbag2) y graficado -->
   <exec_depend>rosbag2_py</exec_depend>
   <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
