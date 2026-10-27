@@ -1,0 +1,14 @@
+# Parametros del modelo cinematico (los lee odom_corrector). Tras cambiar un valor,
+# relanzar el bringup o `ros2 param set /odom_corrector <param> <valor>`.
+#   recta 1.0 m:  r_nuevo     = r     * d_real / d_odom
+#   giro 360 deg: b_eff_nuevo = b_eff * 360 / angulo_medido
+/**:
+  ros__parameters:
+    wheel_radius: 0.0325               # r [m]      -> calibrar en Parte B
+    wheel_separation: 0.2400           # b_eff [m]  -> calibrar en Parte C
+    firmware_wheel_radius: 0.0325      # r0 [m] que asume el ESP32, no tocar
+    firmware_wheel_separation: 0.2400  # b0 [m] que asume el ESP32, no tocar
+    encoder_ticks_per_rev: 1320
+    max_linear_vel: 0.30               # [m/s]
+    max_angular_vel: 1.50              # [rad/s]
+    publish_tf: true
