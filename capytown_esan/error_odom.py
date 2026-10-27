@@ -8,6 +8,8 @@ from rosbag2_py import SequentialReader, StorageOptions, ConverterOptions
 from rclpy.serialization import deserialize_message
 from nav_msgs.msg import Odometry
 
+from capytown_esan.bag_utils import storage_id
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -16,7 +18,7 @@ import matplotlib.pyplot as plt
 def read_odom(bag_path, odom_topic='/odom'):
     reader = SequentialReader()
     reader.open(
-        StorageOptions(uri=bag_path, storage_id='sqlite3'),
+        StorageOptions(uri=bag_path, storage_id=storage_id(bag_path)),
         ConverterOptions(input_serialization_format='cdr',
                          output_serialization_format='cdr'),
     )
