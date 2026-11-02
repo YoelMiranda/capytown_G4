@@ -5,7 +5,7 @@
 /**:
   ros__parameters:
     wheel_radius: 0.03056              # r [m]      -> calibrar en Parte B
-    wheel_separation: 0.2400           # b_eff [m]  -> calibrar en Parte C
+    wheel_separation: 0.2176          # b_eff [m]  -> calibrar en Parte C
     firmware_wheel_radius: 0.0325      # r0 [m] que asume el ESP32, no tocar
     firmware_wheel_separation: 0.2400  # b0 [m] que asume el ESP32, no tocar
     encoder_ticks_per_rev: 1320
