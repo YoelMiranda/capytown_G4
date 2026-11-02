@@ -89,7 +89,7 @@ iniciar_bag() {  # $1 = carpeta de salida
     # job control solo para este proceso: en un script los procesos en segundo plano
     # ignoran SIGINT; con set -m tienen su propio grupo y se pueden cerrar con SIGINT
     set -m
-    ros2 bag record /odom /odom_raw /cmd_vel /tf -o "$1" &
+    ros2 bag record /odom /odom_raw /cmd_vel /tf -o "$1" < /dev/null &
     REC_PID=$!
     set +m
 }

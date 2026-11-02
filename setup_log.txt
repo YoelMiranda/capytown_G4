@@ -1,0 +1,152 @@
+================================================================
+ setup_log RC-0 -- 2026-07-15 06:19:42
+ ROS_DOMAIN_ID=20
+================================================================
+
+$ ros2 node list
+/YB_Car_Node
+/odom_corrector
+
+$ ros2 topic list
+/battery
+/beep
+/cmd_vel
+/imu
+/odom
+/odom_raw
+/odom_reset
+/parameter_events
+/rosout
+/scan
+/servo_s1
+/servo_s2
+/tf
+
+$ timeout 10 ros2 topic hz /odom
+average rate: 10.783
+	min: 0.070s max: 0.145s std dev: 0.02344s window: 12
+average rate: 11.155
+	min: 0.070s max: 0.145s std dev: 0.02038s window: 24
+average rate: 11.008
+	min: 0.070s max: 0.145s std dev: 0.02099s window: 36
+average rate: 11.137
+	min: 0.070s max: 0.145s std dev: 0.01975s window: 48
+average rate: 11.052
+	min: 0.070s max: 0.145s std dev: 0.02026s window: 60
+average rate: 11.117
+	min: 0.070s max: 0.145s std dev: 0.01980s window: 72
+average rate: 11.073
+	min: 0.070s max: 0.145s std dev: 0.02016s window: 84
+average rate: 11.123
+	min: 0.070s max: 0.145s std dev: 0.01980s window: 96
+Traceback (most recent call last):
+  File "/opt/ros/humble/bin/ros2", line 33, in <module>
+    sys.exit(load_entry_point('ros2cli==0.18.7', 'console_scripts', 'ros2')())
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/cli.py", line 89, in main
+    rc = extension.main(parser=parser, args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/command/topic.py", line 41, in main
+    return extension.main(args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 89, in main
+    return main(args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 104, in main
+    _rostopic_hz(node.node, topic, window_size=args.window_size, filter_expr=filter_expr,
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 273, in _rostopic_hz
+    rclpy.spin_once(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 202, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 612, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+
+$ timeout 10 ros2 topic hz /imu
+average rate: 21.903
+	min: 0.009s max: 0.081s std dev: 0.02665s window: 23
+average rate: 22.465
+	min: 0.009s max: 0.081s std dev: 0.02749s window: 47
+average rate: 22.427
+	min: 0.008s max: 0.081s std dev: 0.02695s window: 70
+average rate: 22.033
+	min: 0.008s max: 0.081s std dev: 0.02739s window: 92
+average rate: 21.888
+	min: 0.008s max: 0.081s std dev: 0.02718s window: 114
+average rate: 21.936
+	min: 0.008s max: 0.081s std dev: 0.02747s window: 137
+average rate: 22.250
+	min: 0.008s max: 0.081s std dev: 0.02717s window: 162
+average rate: 22.586
+	min: 0.008s max: 0.081s std dev: 0.02705s window: 188
+Traceback (most recent call last):
+  File "/opt/ros/humble/bin/ros2", line 33, in <module>
+    sys.exit(load_entry_point('ros2cli==0.18.7', 'console_scripts', 'ros2')())
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/cli.py", line 89, in main
+    rc = extension.main(parser=parser, args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/command/topic.py", line 41, in main
+    return extension.main(args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 89, in main
+    return main(args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 104, in main
+    _rostopic_hz(node.node, topic, window_size=args.window_size, filter_expr=filter_expr,
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 273, in _rostopic_hz
+    rclpy.spin_once(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 202, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 612, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+
+$ timeout 10 ros2 topic hz /odom_raw
+average rate: 10.706
+	min: 0.077s max: 0.141s std dev: 0.02022s window: 12
+average rate: 11.111
+	min: 0.069s max: 0.141s std dev: 0.01859s window: 24
+average rate: 10.989
+	min: 0.069s max: 0.143s std dev: 0.01976s window: 36
+average rate: 11.111
+	min: 0.069s max: 0.143s std dev: 0.01920s window: 48
+average rate: 11.051
+	min: 0.069s max: 0.143s std dev: 0.01921s window: 60
+average rate: 11.110
+	min: 0.069s max: 0.143s std dev: 0.01874s window: 72
+average rate: 11.061
+	min: 0.069s max: 0.143s std dev: 0.01905s window: 84
+average rate: 11.111
+	min: 0.069s max: 0.143s std dev: 0.01875s window: 96
+Traceback (most recent call last):
+  File "/opt/ros/humble/bin/ros2", line 33, in <module>
+    sys.exit(load_entry_point('ros2cli==0.18.7', 'console_scripts', 'ros2')())
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2cli/cli.py", line 89, in main
+    rc = extension.main(parser=parser, args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/command/topic.py", line 41, in main
+    return extension.main(args=args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 89, in main
+    return main(args)
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 104, in main
+    _rostopic_hz(node.node, topic, window_size=args.window_size, filter_expr=filter_expr,
+  File "/opt/ros/humble/lib/python3.10/site-packages/ros2topic/verb/hz.py", line 273, in _rostopic_hz
+    rclpy.spin_once(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 202, in spin_once
+    executor.spin_once(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 739, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 728, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 711, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 612, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+
+RECORDATORIO: agregar a mano la captura de rqt_graph (rqt_graph -> guardar imagen).
+
