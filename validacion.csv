@@ -1,1 +1,4 @@
 variante,prueba,valor_real,valor_odom,error_%
+A2,recta,1.045,1.0242,1.99
+A2,recta,1.255,1.2395,1.24
+A2,giro,376.0,360.9,4.00
