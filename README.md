@@ -7,10 +7,10 @@ Paquete ROS 2 Humble (ament_python) para el Yahboom MicroROS-Pi5: odometría cor
 
 | Rol | Integrante | Responsabilidad en RC-0 |
 |---|---|---|
-| Integración | `<COMPLETAR>` | Bringup, ROS_DOMAIN_ID, instalación de rosbag2, bags, repositorio y tag |
-| Control | `<COMPLETAR>` | Calibración de r y b_eff; actualización de `wheel_params.yaml` |
-| Planificación | `<COMPLETAR>` | `scripts/rc0_pruebas.sh`: secuencia de pruebas (recta y giros) |
-| Percepción | `<COMPLETAR>` | `plot_odom.py`: lectura de bags y gráficas |
+| Integración | Simón Contreras | Bringup, ROS_DOMAIN_ID, instalación de rosbag2, bags, repositorio y tag |
+| Control | Aaron Cruzado | Calibración de r y b_eff; actualización de `wheel_params.yaml` |
+| Planificación | Yoel Miranda | `scripts/rc0_pruebas.sh`: secuencia de pruebas (recta y giros) |
+| Percepción | Joaquín Rodríguez | `plot_odom.py`: lectura de bags y gráficas |
 
 ## Sección y variantes (S-003)
 
@@ -33,8 +33,8 @@ export ROS_DOMAIN_ID=20
 
 | Parámetro | Valor final | Inicial |
 |---|---|---|
-| `wheel_radius` (r) | `<COMPLETAR>` m | 0.0325 m |
-| `wheel_separation` (b_eff) | `<COMPLETAR>` m | 0.2400 m |
+| `wheel_radius` (r) | **0.03056** m | 0.0325 m |
+| `wheel_separation` (b_eff) | **0.2176** m | 0.2400 m |
 
 `firmware_wheel_radius` (r0) y `firmware_wheel_separation` (b0) son los valores que asume el
 ESP32 y no se tocan. `odom_corrector` reescala `/odom_raw` → `/odom`:
