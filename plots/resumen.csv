@@ -1,0 +1,7 @@
+bag,topic,tipo,duracion_s,n_msgs,d_odom_m,avance_m,desvio_lateral_m,giro_deg
+rc0_recta,/odom,recta,16.56,185,1.1044,1.1044,0.0062,0.53
+rc0_recta_4,/odom,recta,18.57,207,1.1458,1.1457,-0.0139,-0.34
+rc0_giro,/odom,giro,35.77,389,0.0031,-0.0031,0.0002,362.70
+rc0_val_recta,/odom,recta,17.14,192,1.0242,1.0239,-0.0260,-1.35
+rc0_val_recta_2,/odom,recta,17.45,195,1.2395,1.2394,-0.0085,-0.58
+rc0_val_giro,/odom,giro,43.93,489,0.0049,0.0033,-0.0036,-363.15
